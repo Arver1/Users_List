@@ -32,10 +32,10 @@ public class UserController {
             }
             Connection dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "root");
             Statement statement = dbConnection.createStatement();
-            statement.execute("CREATE SCHEMA `mydatabase`;");
-            statement.execute("CREATE TABLE `mydatabase`.`User`(`id` INT(8) NOT NULL AUTO_INCREMENT,`name` VARCHAR(25) NULL,`age`INT  NULL,`isAdmin` BIT NULL,`createdDate` TIMESTAMP NULL,PRIMARY KEY (`id`));");
-            statement.execute("INSERT INTO mydatabase.User (name,age,isAdmin,createdDate) VALUES ('alex','22',true,'2010-09-15 19:34:41.0');");
-            statement.execute("INSERT INTO mydatabase.User (name,age,isAdmin,createdDate) VALUES ('masha','19',false,'1990-01-29 07:34:19.0');");
+            statement.execute("CREATE SCHEMA `test`;");
+            statement.execute("CREATE TABLE `test`.`User`(`id` INT(8) NOT NULL AUTO_INCREMENT,`name` VARCHAR(25) NULL,`age`INT  NULL,`isAdmin` BIT NULL,`createdDate` TIMESTAMP NULL,PRIMARY KEY (`id`));");
+            statement.execute("INSERT INTO test.User (name,age,isAdmin,createdDate) VALUES ('alex','22',true,'2010-09-15 19:34:41.0');");
+            statement.execute("INSERT INTO test.User (name,age,isAdmin,createdDate) VALUES ('masha','19',false,'1990-01-29 07:34:19.0');");
             statement.close();
             dbConnection.close();
         } catch (SQLException e) {
